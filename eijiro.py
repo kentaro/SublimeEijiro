@@ -11,7 +11,7 @@ class EijiroCommand(sublime_plugin.TextCommand):
         point = self.view.sel()[0].begin()
         self.word = self.view.substr(self.view.word(point))
 
-        if not self.word or self.word == "":
+        if not self.word:
             sublime.status_message("No word found.")
             return
         else:
