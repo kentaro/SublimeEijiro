@@ -48,7 +48,7 @@ class EijiroCommand(sublime_plugin.TextCommand):
 
         edit = output_view.begin_edit()
         raw_content = self.extract_content(self.content)
-        output_view.replace(edit, sublime.Region(0, 0), raw_content.decode("utf-8")[:])
+        output_view.replace(edit, sublime.Region(0, output_view.size()), raw_content.decode("utf-8")[:])
         output_view.end_edit(edit)
 
         output_view.set_read_only(True)
